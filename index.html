@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kaynan Souza · DevOps</title>
+  <meta name="description" content="Portfólio de Kaynan Souza — Engenheiro DevOps e Arquiteto de Soluções. Go, Kubernetes, Docker, Linux e automação.">
+  <meta name="theme-color" content="#06080c">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ========== STATUS BAR (tmux-like navbar) ========== -->
+  <nav id="tmux" class="navbar navbar-expand-md fixed-top tmux-bar">
+    <div class="container-xl">
+      <a class="navbar-brand tmux-session" href="#home">
+        <span class="session-tag">[kaynan]</span>
+        <span class="d-none d-sm-inline">cloud-01</span>
+      </a>
+      <button class="navbar-toggler tmux-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#tmuxNav" aria-controls="tmuxNav" aria-expanded="false" aria-label="Abrir menu">
+        <i class="bi bi-terminal"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="tmuxNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#home"><span class="win">0:</span>home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pipeline"><span class="win">1:</span>pipeline</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stack"><span class="win">2:</span>stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projetos"><span class="win">3:</span>projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato"><span class="win">4:</span>contato</a></li>
+        </ul>
+        <div class="tmux-right">
+          <span><i class="bi bi-hdd-network"></i> uptime <b id="uptime">00:00:00</b></span>
+          <span class="d-none d-lg-inline"><i class="bi bi-clock"></i> <b id="clock">--:--</b></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <header id="home" class="hero">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="glow glow-a" aria-hidden="true"></div>
+      <div class="glow glow-b" aria-hidden="true"></div>
+
+      <div class="container-xl position-relative">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <p class="prompt-line"><span class="p-user">kaynan@cloud-01</span>:<span class="p-path">~</span>$ whoami</p>
+            <h1 class="hero-title" data-text="Kaynan Souza">Kaynan Souza</h1>
+            <p class="hero-role">
+              <span class="role-prefix">&gt;</span>
+              <span id="typed" aria-live="polite">Engenheiro DevOps</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            <p class="hero-bio">
+              Construo a infraestrutura que mantém software de pé: balanceamento de carga em
+              <strong>Kubernetes</strong>, APIs em <strong>Go</strong>, ambientes com <strong>Docker</strong>
+              e automação em <strong>Linux</strong>. Gosto de sistemas que se recuperam sozinhos,
+              medem o próprio comportamento e cabem num <code>docker compose up</code>.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-neon" href="https://github.com/KaynanSouza" target="_blank" rel="noopener">
+                <i class="bi bi-github"></i> git clone github/KaynanSouza
+              </a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/kaynansouza" target="_blank" rel="noopener">
+                <i class="bi bi-linkedin"></i> ssh linkedin
+              </a>
+            </div>
+
+            <ul class="hero-meta list-unstyled">
+              <li><i class="bi bi-circle-fill text-ok"></i> 10 projetos no repositório</li>
+              <li><i class="bi bi-git"></i> versionado com Git, publicado no GitHub Pages</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="term" role="img" aria-label="Terminal mostrando o load balancer em Go distribuindo tráfego entre pods Kubernetes">
+              <div class="term-head">
+                <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                <span class="term-title">bash — balancer@k8s</span>
+              </div>
+              <div class="term-body">
+                <p class="tl" style="--d:0"><span class="c-prompt">$</span> kubectl proxy --port=8000 &amp;</p>
+                <p class="tl dim" style="--d:1">Starting to serve on 127.0.0.1:8000</p>
+                <p class="tl" style="--d:2"><span class="c-prompt">$</span> kubectl get pods -l app=nginx-nodes</p>
+                <p class="tl out" style="--d:3"><span class="c-head">NAME                          STATUS</span></p>
+                <p class="tl out" style="--d:4">nginx-nodes-866bc755d6-svxl4  <span class="c-ok">Running</span></p>
+                <p class="tl out" style="--d:5">nginx-nodes-866bc755d6-2c2p8  <span class="c-ok">Running</span></p>
+                <p class="tl out" style="--d:6">nginx-nodes-866bc755d6-8nncn  <span class="c-ok">Running</span></p>
+                <p class="tl" style="--d:7"><span class="c-prompt">$</span> go run . --port=8080 --algo=p2c</p>
+                <p class="tl" style="--d:8"><span class="c-info">[health]</span> tcp check → <span class="c-ok">all backends alive</span></p>
+                <p class="tl" style="--d:9"><span class="c-info">[pool]</span> algo=p2c  latency=<span class="c-warn">3.5ms</span>  failures=<span class="c-ok">0</span></p>
+                <p class="tl" style="--d:10"><span class="c-prompt">$</span> <span class="caret"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a class="scroll-hint" href="#pipeline" aria-label="Rolar para a próxima seção">
+          <span>scroll</span><i class="bi bi-chevron-double-down"></i>
+        </a>
+      </div>
+    </header>
+
+    <!-- ========== PIPELINE ========== -->
+    <section id="pipeline" class="section">
+      <div class="container-xl">
+        <div class="section-head">
+          <span class="section-cmd">$ cat .github/workflows/como-eu-trabalho.yml</span>
+          <h2 class="section-title">Do commit ao <span class="hl">monitoramento</span></h2>
+        </div>
+
+        <ol class="pipeline list-unstyled">
+          <li class="stage reveal">
+            <div class="stage-icon"><i class="bi bi-git"></i></div>
+            <span class="stage-name">commit</span>
+            <p>Commits pequenos, mensagens descritivas e versões marcadas com tags.</p>
+          </li>
+          <li class="stage reveal">
+            <div class="stage-icon"><i class="bi bi-boxes"></i></div>
+            <span class="stage-name">build</span>
+            <p>Ambientes reproduzíveis com Docker Compose, Maven, Gradle e CMake.</p>
+          </li>
+          <li class="stage reveal">
+            <div class="stage-icon"><i class="bi bi-check2-square"></i></div>
+            <span class="stage-name">test</span>
+            <p>Testes com dados reais: go test, Vitest, Playwright e fixtures oficiais.</p>
+          </li>
+          <li class="stage reveal">
+            <div class="stage-icon"><i class="bi bi-cloud-upload"></i></div>
+            <span class="stage-name">deploy</span>
+            <p>Workloads em Kubernetes atrás de um balanceador com health checks.</p>
+          </li>
+          <li class="stage reveal">
+            <div class="stage-icon"><i class="bi bi-activity"></i></div>
+            <span class="stage-name">observe</span>
+            <p>Métricas por pod — CPU, memória, rede e latência — para decidir com números.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== STACK ========== -->
+    <section id="stack" class="section section-alt">
+      <div class="container-xl">
+        <div class="section-head">
+          <span class="section-cmd">$ kubectl get skills -n kaynan -o wide</span>
+          <h2 class="section-title">Stack em <span class="hl">execução</span></h2>
+        </div>
+
+        <div class="kube-table reveal" role="table" aria-label="Tecnologias">
+          <div class="kt-row kt-head" role="row">
+            <span role="columnheader">NAME</span>
+            <span role="columnheader">KIND</span>
+            <span role="columnheader">STATUS</span>
+            <span role="columnheader" class="d-none d-md-block">USED IN</span>
+          </div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-diagram-3"></i> kubernetes</span><span role="cell">orchestration</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">loadBalancing</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-box-seam"></i> docker / compose</span><span role="cell">container</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">biblioteca-api</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-terminal"></i> linux / bash</span><span role="cell">runtime</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">todos</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-lightning-charge"></i> go · gin</span><span role="cell">backend</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">balancer, engPortal, biblioteca</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-cup-hot"></i> java · spring boot</span><span role="cell">backend</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">projeto-integrador</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-database"></i> mongo · postgres · sqlite</span><span role="cell">storage</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">biblioteca, integrador, apuração</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-filetype-tsx"></i> typescript · react · expo</span><span role="cell">frontend</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">energy-forge-hub, apuração</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-git"></i> git · github</span><span role="cell">vcs</span><span role="cell" class="c-ok">● Running</span><span role="cell" class="d-none d-md-block">todos</span></div>
+          <div class="kt-row" role="row"><span role="cell"><i class="bi bi-cpu"></i> c · c++ · c# · kotlin</span><span role="cell">systems</span><span role="cell" class="c-warn">● Completed</span><span role="cell" class="d-none d-md-block">compilador, merge-sort, apps</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJETOS ========== -->
+    <section id="projetos" class="section">
+      <div class="container-xl">
+        <div class="section-head">
+          <span class="section-cmd">$ ls -la ~/portfolio/projetos</span>
+          <h2 class="section-title">Projetos em <span class="hl">destaque</span></h2>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrar projetos">
+          <button class="filter active" data-filter="all">--all</button>
+          <button class="filter" data-filter="infra">--infra</button>
+          <button class="filter" data-filter="backend">--backend</button>
+          <button class="filter" data-filter="apps">--apps</button>
+          <button class="filter" data-filter="cs">--cs</button>
+        </div>
+
+        <div class="row g-4" id="projectGrid">
+
+          <!-- Load Balancer (featured) -->
+          <div class="col-12 col-lg-8 project" data-tags="infra backend">
+            <article class="pod pod-featured reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">deploy/load-balancer</span>
+                <span class="pod-ns">ns: academico</span>
+              </div>
+              <div class="pod-body">
+                <h3>loadBalancing <span class="badge-feat">featured</span></h3>
+                <p>
+                  Load balancer em Go que distribui tráfego entre pods NGINX via API Proxy do Kubernetes.
+                  Cada backend tem um reverse proxy próprio com <code>ErrorHandler</code> para lidar com falhas,
+                  e um health check TCP periódico tira do pool o que não responde.
+                </p>
+                <div class="row g-3 my-1">
+                  <div class="col-sm-6">
+                    <ul class="hl-list">
+                      <li>7 estratégias: Round Robin, WRR, IP Hash, P2C, Least Latency, Fewest Conn, Always First</li>
+                      <li>Métricas por pod comparando Round Robin, IP Hash e Least Latency</li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="metrics" aria-label="Métricas coletadas por pod">
+                      <div class="metric"><span>cpu</span><div class="bar"><i style="--w:22%"></i></div></div>
+                      <div class="metric"><span>mem</span><div class="bar"><i style="--w:47%"></i></div></div>
+                      <div class="metric"><span>net</span><div class="bar"><i style="--w:68%"></i></div></div>
+                      <div class="metric"><span>lat</span><div class="bar"><i style="--w:35%"></i></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tags"><span>Go</span><span>Kubernetes</span><span>kubectl proxy</span><span>Reverse Proxy</span><span>Health Checks</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-academicos/loadBalancing" target="_blank" rel="noopener">
+                <span>$ cd ./loadBalancing</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Apuração 2026 -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="apps infra">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">app/apuracao-2026</span>
+                <span class="pod-ns">ns: pessoal</span>
+              </div>
+              <div class="pod-body">
+                <h3>monitoramento-eleicao</h3>
+                <p>App que acompanha a apuração das Eleições 2026 direto dos arquivos públicos do TSE, sem backend.</p>
+                <ul class="hl-list">
+                  <li>Cliente HTTP com ETag, cache negativo e backoff em 429/5xx</li>
+                  <li>Fila com até 4 requisições simultâneas, ~8 req/s</li>
+                  <li>Cache e histórico offline em SQLite</li>
+                </ul>
+                <div class="tags"><span>Expo</span><span>React Native</span><span>TypeScript</span><span>SQLite</span><span>Vitest</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-pessoais/monitoramento-eleicao" target="_blank" rel="noopener">
+                <span>$ cd ./monitoramento-eleicao</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Biblioteca -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="backend infra">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">svc/biblioteca-api</span>
+                <span class="pod-ns">ns: academico</span>
+              </div>
+              <div class="pod-body">
+                <h3>Biblioteca Virtual API</h3>
+                <p>API REST para livros, usuários e empréstimos, com rotas de administração e autenticação por cookie.</p>
+                <ul class="hl-list">
+                  <li>MongoDB provisionado via Docker Compose</li>
+                  <li>Script de seed em <code>docker-entrypoint-initdb.d</code></li>
+                  <li>Documentação no Postman</li>
+                </ul>
+                <div class="tags"><span>Go</span><span>MongoDB</span><span>Docker Compose</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-academicos/sistema-de-biblioteca-Golang-e-Mongo-Back" target="_blank" rel="noopener">
+                <span>$ cd ./sistema-de-biblioteca</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- engPortal + energy-forge-hub -->
+          <div class="col-12 col-lg-8 project" data-tags="backend apps">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">stack/eng-portal</span>
+                <span class="pod-ns">ns: pessoal</span>
+              </div>
+              <div class="pod-body">
+                <h3>engPortal + Energy Forge Hub</h3>
+                <p>
+                  Portal interno de engenharia em duas camadas: uma API em Go/Gin que serve projetos, kanban,
+                  documentos e treinamentos, e um dashboard em React que consome esses dados.
+                </p>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <div class="mini-term">
+                      <span class="c-info">GET</span> /api/projects<br>
+                      <span class="c-info">GET</span> /api/kanban<br>
+                      <span class="c-info">GET</span> /api/docs · /api/download<br>
+                      <span class="c-ok">CRUD</span> /api/trainings/:id
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <ul class="hl-list">
+                      <li>Falha isolada por requisição: um serviço caindo não derruba o dashboard</li>
+                      <li>Testes com Vitest e Playwright</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="tags"><span>Go</span><span>Gin</span><span>React</span><span>Vite</span><span>Tailwind</span><span>shadcn/ui</span></div>
+              </div>
+              <div class="pod-foot pod-foot-split">
+                <a href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-pessoais/engenharia" target="_blank" rel="noopener"><span>$ cd ./engenharia</span><i class="bi bi-arrow-up-right"></i></a>
+                <a href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-pessoais/energy-forge-hub" target="_blank" rel="noopener"><span>$ cd ./energy-forge-hub</span><i class="bi bi-arrow-up-right"></i></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Projeto Integrador -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="backend">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">svc/ai-assistant</span>
+                <span class="pod-ns">ns: academico</span>
+              </div>
+              <div class="pod-body">
+                <h3>Projeto Integrador I</h3>
+                <p>API Spring Boot com assistente de IA baseado em RAG: indexa documentos e responde com contexto recuperado.</p>
+                <ul class="hl-list">
+                  <li>Embeddings locais com all-MiniLM-L6-v2</li>
+                  <li>Usuários e produtos persistidos em PostgreSQL via JPA</li>
+                </ul>
+                <div class="tags"><span>Java 17</span><span>Spring Boot</span><span>LangChain4j</span><span>PostgreSQL</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-academicos/projeto-integrador-I" target="_blank" rel="noopener">
+                <span>$ cd ./projeto-integrador-I</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Compilador -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="cs">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">bin/compilador-st</span>
+                <span class="pod-ns">ns: academico</span>
+              </div>
+              <div class="pod-body">
+                <h3>Compilador-st</h3>
+                <p>Compilador para Structured Text (IEC 61131), a linguagem de CLPs da automação industrial.</p>
+                <ul class="hl-list">
+                  <li>Análise léxica, sintática e semântica</li>
+                  <li>Build com CMake + Ninja</li>
+                </ul>
+                <div class="tags"><span>C++</span><span>CMake</span><span>IEC 61131</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-academicos/Compilador-st" target="_blank" rel="noopener">
+                <span>$ cd ./Compilador-st</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Merge sort -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="cs">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">bin/merge-sort</span>
+                <span class="pod-ns">ns: academico</span>
+              </div>
+              <div class="pod-body">
+                <h3>Merge-sort</h3>
+                <p>Implementação do Merge Sort com alocação dinâmica e foco em análise de complexidade, O(n log n).</p>
+                <div class="tags"><span>C</span><span>Algoritmos</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-academicos/Merge-sort" target="_blank" rel="noopener">
+                <span>$ cd ./Merge-sort</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Star Wars -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="apps">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">web/tela-star-wars</span>
+                <span class="pod-ns">ns: academico</span>
+              </div>
+              <div class="pod-body">
+                <h3>Tela Star Wars</h3>
+                <p>Front-end temático com home, loja, login, cadastro e recuperação de senha.</p>
+                <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-academicos/tela-star-wars" target="_blank" rel="noopener">
+                <span>$ cd ./tela-star-wars</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Pokemon -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="cs">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">bin/batalha-pokemon</span>
+                <span class="pod-ns">ns: pessoal</span>
+              </div>
+              <div class="pod-body">
+                <h3>BatalhaPokemon</h3>
+                <p>Jogo de batalha por turnos no console, com Pokémon, movimentos e inimigos modelados em classes.</p>
+                <div class="tags"><span>C#</span><span>.NET</span><span>POO</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-pessoais/BatalhaPokemon" target="_blank" rel="noopener">
+                <span>$ cd ./BatalhaPokemon</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+          <!-- Calculadora -->
+          <div class="col-12 col-md-6 col-lg-4 project" data-tags="apps">
+            <article class="pod reveal">
+              <div class="pod-head">
+                <span class="led"></span>
+                <span class="pod-name">apk/calculadora</span>
+                <span class="pod-ns">ns: pessoal</span>
+              </div>
+              <div class="pod-body">
+                <h3>calculadora-mobile</h3>
+                <p>Calculadora nativa para Android, com build Gradle em Kotlin DSL.</p>
+                <div class="tags"><span>Kotlin</span><span>Android</span><span>Gradle</span></div>
+              </div>
+              <a class="pod-foot" href="https://github.com/KaynanSouza/portfolio/tree/main/projetos-pessoais/calculadora-mobile" target="_blank" rel="noopener">
+                <span>$ cd ./calculadora-mobile</span><i class="bi bi-arrow-up-right"></i>
+              </a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTATO ========== -->
+    <section id="contato" class="section section-alt">
+      <div class="container-xl">
+        <div class="contact reveal">
+          <span class="section-cmd">$ ./connect.sh --to kaynan</span>
+          <h2 class="contact-title">Vamos colocar algo<br>em <span class="hl">produção</span>?</h2>
+          <p class="contact-sub">Aberto a conversas sobre DevOps, cloud, arquitetura de soluções e back-end.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="btn btn-neon btn-lg" href="https://www.linkedin.com/in/kaynansouza" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/KaynanSouza" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container-xl">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-7">
+          <pre class="systemctl" aria-label="Status do serviço"><span class="c-ok">●</span> kaynan.service - DevOps Engineer &amp; Solutions Architect
+     Loaded: loaded (/home/kaynan/portfolio; <span class="c-ok">enabled</span>)
+     Active: <span class="c-ok">active (running)</span> since <span id="year">2026</span></pre>
+        </div>
+        <div class="col-md-5 text-md-end">
+          <div class="footer-links">
+            <a href="https://github.com/KaynanSouza" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/kaynansouza" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/KaynanSouza/portfolio" target="_blank" rel="noopener" aria-label="Repositório do portfólio"><i class="bi bi-git"></i></a>
+          </div>
+          <p class="footer-copy">© <span id="yearCopy">2026</span> Kaynan Souza · EOF</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Rotating role, typed like a shell
+      const roles = ['Engenheiro DevOps', 'Arquiteto de Soluções', 'Go · Kubernetes · Docker', 'Linux & Automação'];
+      const el = document.getElementById('typed');
+      if (!reduce) {
+        let r = 0, i = roles[0].length, deleting = true;
+        const tick = () => {
+          const word = roles[r];
+          i += deleting ? -1 : 1;
+          el.textContent = word.slice(0, i);
+          let delay = deleting ? 35 : 70;
+          if (!deleting && i === word.length) { deleting = true; delay = 2200; }
+          else if (deleting && i === 0) { deleting = false; r = (r + 1) % roles.length; delay = 300; }
+          setTimeout(tick, delay);
+        };
+        setTimeout(tick, 2600);
+      }
+
+      // Uptime + clock in the status bar
+      const start = Date.now();
+      const pad = n => String(n).padStart(2, '0');
+      const up = document.getElementById('uptime'), clock = document.getElementById('clock');
+      const tickClock = () => {
+        const s = Math.floor((Date.now() - start) / 1000);
+        up.textContent = `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}`;
+        const d = new Date();
+        clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}`;
+      };
+      tickClock(); setInterval(tickClock, 1000);
+
+      // Year
+      const y = new Date().getFullYear();
+      document.getElementById('year').textContent = y;
+      document.getElementById('yearCopy').textContent = y;
+
+      // Project filters
+      const filters = document.querySelectorAll('.filter');
+      const projects = document.querySelectorAll('.project');
+      filters.forEach(btn => btn.addEventListener('click', () => {
+        filters.forEach(b => b.classList.toggle('active', b === btn));
+        const f = btn.dataset.filter;
+        projects.forEach(p => {
+          p.classList.toggle('is-hidden', f !== 'all' && !p.dataset.tags.split(' ').includes(f));
+        });
+      }));
+
+      // Reveal on scroll
+      const items = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) {
+        items.forEach(i => i.classList.add('in'));
+      } else {
+        const io = new IntersectionObserver(entries => entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }), { threshold: 0.12 });
+        items.forEach(i => io.observe(i));
+      }
+
+      // Highlight the tmux window for the section under the status bar
+      const links = [...document.querySelectorAll('#tmuxNav .nav-link')];
+      const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+      const spy = () => {
+        const y = window.scrollY + 120;
+        let current = 0;
+        sections.forEach((s, i) => { if (s.offsetTop <= y) current = i; });
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) current = sections.length - 1;
+        links.forEach((a, i) => a.classList.toggle('active', i === current));
+      };
+      spy(); window.addEventListener('scroll', spy, { passive: true });
+
+      // Close mobile menu after picking a window
+      const nav = document.getElementById('tmuxNav');
+      nav.querySelectorAll('.nav-link').forEach(a => a.addEventListener('click', () => {
+        if (nav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(nav).hide();
+      }));
+    })();
+  </script>
+</body>
+</html>
