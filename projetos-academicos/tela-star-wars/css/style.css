@@ -1,0 +1,47 @@
+body {
+    --bege: #d8ccb7;
+    --verde-escuro: rgb(131, 111, 0); /*cria variavel com o nome da cor*/
+    --verde-claro:  #ff0000;
+    font-family: 'Barlow', sans-serif;
+    height: 100px;
+    padding-top: 6rem;
+  }
+
+input[type="checkbox"]{
+  border: 2px solid var(--verde-claro);
+  box-shadow: none;
+}
+
+input[type="checkbox"]:checked,
+input[type="checkbox"]:focus{
+  background-color: var(--verde-claro);
+  border-color: var(--verde-claro);
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-padrao{
+  background-color: var(--verde-claro);
+  color: #d8ccb7;
+}
+
+.btn-padrao:hover{
+  background-color: var(--verde-escuro);
+  color: #d8ccb7;
+}
+
+.parallax{
+  background-attachment: fixed;
+}
+
+.hero {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   width: 1%;
+   height: 640px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+}

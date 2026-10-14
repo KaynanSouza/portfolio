@@ -1,0 +1,5 @@
+Adicionar Funcionalidades:
+
+    crud de tarefas do kaban,
+    Area de inscritos do treinamento,
+    Adicionar os arquivo ao back-end,
