@@ -1,0 +1,7 @@
+# Responsável padrão por todo o repositório
+*                       @KaynanSouza
+
+# Arquivos sensíveis: sempre exigem revisão do dono
+/.github/               @KaynanSouza
+/SECURITY.md            @KaynanSouza
+/CODEOWNERS             @KaynanSouza
