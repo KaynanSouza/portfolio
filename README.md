@@ -1,103 +1,86 @@
-# 📁 Portfólio de Projetos
+# PortfolioHUB
 
-Repositório com meus **projetos acadêmicos e pessoais**, organizado e versionado com Git e GitHub. Aqui reúno trabalhos desenvolvidos durante a graduação e projetos próprios, com o objetivo de mostrar minha evolução técnica e compor meu perfil profissional.
+Plataforma centralizada para exibir e gerenciar meus **projetos acadêmicos e pessoais**, versionada com Git e publicada com GitHub Pages.
 
-🌐 **Página do portfólio (GitHub Pages):** [https://github.com/KaynanSouza/portfolio](https://github.com/KaynanSouza/portfolio)
-💼 **LinkedIn:** [SEU-PERFIL](https://www.linkedin.com/in/kaynansouza)
-
----
-
-## 👩‍💻 Sobre mim
-
-Olá! Meu nome é **Kaynan** e sou estudante de tecnologia. Neste repositório você encontra projetos que envolvem desenvolvimento de software, algoritmos, back-end, mobile e interfaces web.
-
-> ✏️ *Edite este parágrafo com sua apresentação pessoal (curso, instituição, áreas de interesse).*
+🌐 **Site publicado:** https://kaynansouza.github.io/portfolio/
+💼 **LinkedIn:** [linkedin.com/in/kaynansouza](https://www.linkedin.com/in/kaynansouza)
+🐙 **GitHub:** [github.com/KaynanSouza](https://github.com/KaynanSouza)
 
 ---
 
-## 🗂️ Estrutura do repositório
+## Sobre mim
+
+Sou Kaynan Souza, estudante de tecnologia com foco em **DevOps e arquitetura de soluções**. Construo a infraestrutura que mantém software de pé: balanceamento de carga em Kubernetes, APIs em Go, ambientes com Docker e automação em Linux.
+
+---
+
+## Estrutura do repositório
 
 ```
 portfolio/
 ├── README.md
+├── SECURITY.md · CONTRIBUTING.md · CODEOWNERS · LICENSE
+├── index.html · style.css          # página publicada (GitHub Pages)
+├── .github/                        # templates, Dependabot e workflows
+├── documentacao/                   # plano de implantação e guia de colaboração
 ├── projetos-academicos/
-│   ├── Compilador-st/
-│   ├── loadBalancing/
-│   ├── Merge-sort/
-│   ├── projeto-integrador-I/
-│   ├── sistema-de-biblioteca-Golang-e-Mongo-Back/
-│   └── tela-star-wars/
-├── projetos-pessoais/
-│   ├── BatalhaPokemon/
-│   ├── calculadora-mobile/
-│   ├── energy-forge-hub/
-│   ├── engenharia/
-│   └── monitoramento-eleicao/
-└── documentacao/
+└── projetos-pessoais/
 ```
 
 ---
 
-## 🎓 Projetos acadêmicos
+## Projetos acadêmicos
 
 | Projeto | Descrição | Tecnologias |
 |---|---|---|
-| [Compilador-st](projetos-academicos/Compilador-st) | Compilador desenvolvido como trabalho da disciplina de compiladores (análise léxica, sintática e semântica). | C++ |
-| [loadBalancing](projetos-academicos/loadBalancing) | Implementação/simulação de balanceamento de carga entre servidores. | Go, Kubernetes |
-| [Merge-sort](projetos-academicos/Merge-sort) | Implementação do algoritmo de ordenação Merge Sort, com foco em análise de complexidade. | C |
-| [projeto-integrador-I](projetos-academicos/projeto-integrador-I) | Projeto integrador do curso, aplicando conhecimentos de várias disciplinas em uma solução completa. | *(preencher)* |
-| [sistema-de-biblioteca-Golang-e-Mongo-Back](projetos-academicos/sistema-de-biblioteca-Golang-e-Mongo-Back) | Back-end de um sistema de biblioteca construído com **Go (Golang)** e **MongoDB**. | Go, MongoDB |
-| [tela-star-wars](projetos-academicos/tela-star-wars) | Tela/interface temática de Star Wars, com foco em layout e front-end. | HTML/CSS/JavaScript |
+| [loadBalancing](projetos-academicos/loadBalancing) | Load balancer com 7 estratégias, health check TCP e métricas por pod | Go, Kubernetes |
+| [Compilador-st](projetos-academicos/Compilador-st) | Compilador para Structured Text (IEC 61131): análise léxica, sintática e semântica | C++, CMake |
+| [Merge-sort](projetos-academicos/Merge-sort) | Merge Sort com alocação dinâmica e análise de complexidade O(n log n) | C |
+| [projeto-integrador-I](projetos-academicos/projeto-integrador-I) | API com assistente de IA baseado em RAG | Java 17, Spring Boot, LangChain4j, PostgreSQL |
+| [sistema-de-biblioteca-Golang-e-Mongo-Back](projetos-academicos/sistema-de-biblioteca-Golang-e-Mongo-Back) | API REST de livros, usuários e empréstimos | Go, MongoDB, Docker Compose |
+| [tela-star-wars](projetos-academicos/tela-star-wars) | Front-end temático com home, loja, login e cadastro | HTML, CSS, JavaScript |
 
----
-
-## 🚀 Projetos pessoais
+## Projetos pessoais
 
 | Projeto | Descrição | Tecnologias |
 |---|---|---|
-| [BatalhaPokemon](projetos-pessoais/BatalhaPokemon) | Jogo de batalha inspirado em Pokémon. | C# |
-| [calculadora-mobile](projetos-pessoais/calculadora-mobile) | Aplicativo de calculadora para dispositivos móveis. | Kotlin |
-| [energy-forge-hub](projetos-pessoais/energy-forge-hub) | Plataforma/hub relacionado a energia. | JavaScript |
-| [engenharia](projetos-pessoais/engenharia) | Projeto voltado a aplicações de engenharia. | GO |
-| [monitoramento-eleicao](projetos-pessoais/monitoramento-eleicao) | Sistema de monitoramento e acompanhamento de dados de eleição. | Expo |
+| [BatalhaPokemon](projetos-pessoais/BatalhaPokemon) | Jogo de batalha por turnos no console | C#, .NET |
+| [calculadora-mobile](projetos-pessoais/calculadora-mobile) | Calculadora nativa para Android | Kotlin, Gradle |
+| [energy-forge-hub](projetos-pessoais/energy-forge-hub) | Dashboard do portal de engenharia | React, Vite, Tailwind |
+| [engenharia](projetos-pessoais/engenharia) | API do portal de engenharia (projetos, kanban, documentos) | Go, Gin |
+| [monitoramento-eleicao](projetos-pessoais/monitoramento-eleicao) | App que acompanha a apuração a partir de arquivos públicos | Expo, React Native, TypeScript, SQLite |
 
 ---
 
-## 🛠️ Tecnologias e ferramentas
+## Tecnologias e ferramentas
 
-- **Versionamento:** Git e GitHub
-- **Publicação:** GitHub Pages
-- **Linguagens e tecnologias:** Go, MongoDB, HTML, CSS, JavaScript, Python, Java
-
----
-
-## 🔄 Boas práticas de versionamento
-
-- Commits pequenos e com mensagens descritivas.
-- Cada projeto em sua própria pasta, com seu próprio `README.md`.
-- Marcação de versões com tags (ex.: `v1.0`).
+- **Infraestrutura:** Kubernetes, Docker, Linux
+- **Linguagens:** Go, Java, TypeScript, C, C++, C#, Kotlin
+- **Dados:** MongoDB, PostgreSQL, SQLite
+- **Versionamento e publicação:** Git, GitHub, GitHub Pages, GitHub Actions
 
 ---
 
-## ▶️ Como usar este repositório
+## Segurança e colaboração
+
+- A branch `main` é protegida: mudanças entram por Pull Request.
+- Segredos nunca são versionados. Veja [SECURITY.md](SECURITY.md) para reportar vulnerabilidades.
+- Para propor mudanças, leia [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## Como usar
 
 ```bash
-# Clonar o repositório
 git clone https://github.com/KaynanSouza/portfolio.git
-
-# Entrar na pasta
 cd portfolio
 ```
 
-Cada projeto possui instruções específicas de execução no seu próprio `README.md`.
+Cada projeto tem instruções de execução no seu próprio `README.md`.
 
 ---
 
-## 📬 Contato
+## Contato
 
-- 💼 LinkedIn: [SEU-PERFIL](https://www.linkedin.com/in/kaynansouza)
-- 🐙 GitHub: [SEU-USUARIO](https://github.com/KaynanSouza)
-
----
-
-⭐ Se gostou do portfólio, fique à vontade para explorar os projetos!
+- 💼 LinkedIn: https://www.linkedin.com/in/kaynansouza
+- 🐙 GitHub: https://github.com/KaynanSouza
